@@ -1,2 +1,2 @@
 #!/bin/bash
-echo S(cut -cl | tr -d "\n") 
+cut -c 1 | paste -s -d "

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Displays information about `school` file. 
+# Displays information about `school` file.
 
 if [ -e "school" ]
 then

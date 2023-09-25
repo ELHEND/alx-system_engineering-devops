@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-# run apache on designated container
 
-service apache2 start
+# get the container name from the environment
+CONTAINER_NAME=${CONTAINER_NAME:-vigilant_tesla}
+
+# start apache on the container
+docker exec -it ${CONTAINER_NAME} service apache2 start

@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# installs nginx and configures it on  remote server
-#!/usr/bin/env bash
 
 # Install Nginx
 sudo apt update && sudo apt install nginx

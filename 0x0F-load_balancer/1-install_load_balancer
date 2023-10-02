@@ -12,9 +12,9 @@ frontend http-in
     mode http
     option forwardfor header Connection
     option http-keep-alive      # enable keep-alive connections
-    timeout http-keep-alive 65s # set the keep-alive timeout to 65 seconds
-    default_backend servers
-        
+    timeout http-keep-alive 65s # set  keep-alive timeout to 65 seconds
+    default_backend servers     
+
 backend servers
     mode http
     balance roundrobin

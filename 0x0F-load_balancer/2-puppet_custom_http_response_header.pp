@@ -1,25 +1,25 @@
-# Installs  Nginx server with custome HTTP header
+class nginx::custom_http_header {
 
-exec {'update':
-  provider => shell,
-  command  => 'sudo apt-get -y update',
-  before   => Exec['install Nginx'],
+  package { 'nginx': ensure => present }
+
+  service { 'nginx': ensure => running }
+
+  file { '/etc/nginx/nginx.conf':
+    ensure => present,
+    owner => 'root',
+    group => 'root',
+    mode => '0644',
+    content => template('nginx/nginx.conf.erb'),
+    notify => Service['nginx'],
+  }
+
+  template('nginx/nginx.conf.erb') {
+    source => 'nginx/nginx.conf.erb'
+
+    variables => {
+      custom_http_header => 'X-Served-By',
+    }
+  }
+
 }
 
-exec {'install Nginx':
-  provider => shell,
-  command  => 'sudo apt-get -y install nginx',
-  before   => Exec['add_header'],
-}
-
-exec { 'add_header':
-  provider    => shell,
-  environment => ["HOST=${hostname}"],
-  command     => 'sudo sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/include \/etc\/nginx\/sites-enabled\/\*;\n\tadd_header X-Served-By \"$HOST\";/" /etc/nginx/nginx.conf',
-  before      => Exec['restart Nginx'],
-}
-
-exec { 'restart Nginx':
-  provider => shell,
-  command  => 'sudo service nginx restart',
-}

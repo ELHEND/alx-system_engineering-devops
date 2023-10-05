@@ -1,8 +1,8 @@
 global
     ssl-engine on
-    ssl-ca /etc/letsencrypt/live/example.com/fullchain.pem
-    ssl-cert /etc/letsencrypt/live/example.com/cert.pem
-    ssl-key /etc/letsencrypt/live/example.com/privkey.pem
+    ssl-ca /etc/letsencrypt/live/holberton.online.com/fullchain.pem
+    ssl-cert /etc/letsencrypt/live/holberton.online.com/cert.pem
+    ssl-key /etc/letsencrypt/live/holberton.online.com/privkey.pem
 
 defaults
     mode http

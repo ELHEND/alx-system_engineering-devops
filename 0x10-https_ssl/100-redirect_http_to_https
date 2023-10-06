@@ -1,0 +1,22 @@
+global
+    ssl-engine on
+    ssl-ca /etc/letsencrypt/live/holberton.online.com/fullchain.pem
+    ssl-cert /etc/letsencrypt/live/holberton.online.com/cert.pem
+    ssl-key /etc/letsencrypt/live/holberton.online.com/privkey.pem
+
+defaults
+    mode http
+    option httplog
+    option dontlognull
+    option http-server-close
+
+frontend www
+    bind *:80
+    mode http
+    default_backend www_backend
+    redirect scheme https code 301 if !{ ssl_fc }
+
+backend www_backend
+    balance roundrobin
+    server web1 54.90.39.109:80
+    server web2 3.94.213.245:80

@@ -17,5 +17,5 @@ frontend www
 
 backend www_backend
     balance roundrobin
-    server web1 54.90.39.109:80
-    server web2 3.94.213.245:80
+    server web1 100.26.173.246:80
+    server web2 54.210.234.144:80

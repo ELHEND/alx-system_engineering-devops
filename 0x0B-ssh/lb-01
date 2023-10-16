@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-<<<<<<< HEAD
 # server web-01 login
-=======
 # server lb-01 login
->>>>>>> fa854322a940baf318dcd889f4692b15ebc3d980
+fa854322a940baf318dcd889f4692b15ebc3d980
 
 eval $("ssh-agent")
 

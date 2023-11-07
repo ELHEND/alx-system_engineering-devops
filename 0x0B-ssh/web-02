@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 # server web-01 login
 # server web-02 login
-fa854322a940baf318dcd889f4692b15ebc3d980
 
 eval $("ssh-agent")
 
 ssh-add ~/.ssh/school
 
 ssh ubuntu@3.94.213.245
-=======
 ssh ubuntu@54.210.234.144
-fa854322a940baf318dcd889f4692b15ebc3d980
+
